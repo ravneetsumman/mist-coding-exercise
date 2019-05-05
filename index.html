@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="air-planes.css">
+  </head>
+  <body onload="update_flights_info();">
+    <div class="container">
+      <div style="width: 100%;">
+        <h3 class="air-head">Airplane Flights</h3>
+        <input type="text" name="airline_name" id="airline_name"
+         placeholder="Airline" class="input-search" onfocusout="get_filtered_airlines(event);">
+      </div>
+      <div class="graph-box">
+        <div>
+          <div class="flight-info">
+            <span id="flight_count"></span>
+            <span id="airline_name"></span>
+          </div>
+          <div class="chart">
+            <svg viewBox="0 0 480 150" id="flights_chart"></svg>
+          </div>
+         </div>
+       </div>
+     </div>
+  </body>
+</html>
+<script src="airline-data.js"></script>
+<script src="airline-script.js"></script>

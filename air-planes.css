@@ -1,0 +1,53 @@
+
+body {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: auto;
+}
+.chart {
+  height: 370px;
+  width: 480px;
+  background: repeating-linear-gradient(to right,#E7E7E7,#fff 1px,#fff 20px);
+  padding-top: 10px;
+}
+
+.container{
+  border: 1px solid #DDDCDC;
+  background-color: #F5F5F5;
+  width: 80%;
+  height: 500px;
+  display: border-box;
+  padding: 20px;
+}
+.air-head{
+  color: #464646;
+  float: left;
+  font-weight: normal;
+}
+.input-search{
+  border: 1px solid #D7D7D7;
+  float: right;
+  padding-left: 10px;
+  margin-top: 15px;
+  height: 25px;
+  width: 200px;
+  font-size: 14px;
+}
+.graph-box{
+  border: 2px solid #A9A9A9;
+  width: 480px;
+  /* height: 450px; */
+  display: border-box;
+  clear:both;
+}
+.flight-info{
+  height: 30px;
+  border: none;
+  background-color:#E6E8EA;
+  text-align: center;
+  line-height: 27px;
+}
