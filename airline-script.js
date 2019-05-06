@@ -45,7 +45,7 @@ function update_flights_info(searched_airline_id = '') {
 
   //call function to calculate coordinates
   var coordinates = calculate_coordinates(num_flights_by_hour);
-  draw_poly_line(coordinates.join(" "));
+  draw_poly_line(coordinates);
 }
 
 /*
@@ -104,17 +104,22 @@ function calculate_coordinates(flights_data, width=960, height=400){
 // func to draw polygon points
 function draw_poly_line(coordinates){
   var svg = document.getElementById('flights_chart');
-  // delete all polygon points
-  var poly_elements = document.getElementsByTagName('polygon'), index;
-  for (index = poly_elements.length - 1; index >= 0; index--) {
-    poly_elements[index].parentNode.removeChild(poly_elements[index]);
+
+  // delete existing lines
+  var line_elements = document.getElementsByTagName('line');
+  for(var index = line_elements.length - 1; index >= 0; index--) {
+    line_elements[index].parentNode.removeChild(line_elements[index]);
   }
 
-  var polygon = document.createElementNS("http://www.w3.org/2000/svg","polygon");
-   polygon.setAttribute("points", coordinates);
-   polygon.setAttribute("stroke", "#0074d9");
-   polygon.setAttribute('fill', "none");
-   svg.appendChild(polygon);
+  for(var i = 1; i < coordinates.length; i++) {
+    var line = document.createElementNS('http://www.w3.org/2000/svg','line');
+    line.setAttribute('x1', coordinates[i-1][0]);
+    line.setAttribute('y1', coordinates[i-1][1]);
+    line.setAttribute('x2', coordinates[i][0]);
+    line.setAttribute('y2', coordinates[i][1]);
+    line.setAttribute("stroke", "#0074d9")
+    svg.append(line);
+  }
 }
 
 // keypress event on input text filter
