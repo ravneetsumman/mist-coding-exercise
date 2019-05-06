@@ -9,16 +9,22 @@ body {
   width: auto;
 }
 .chart {
-  height: 370px;
-  width: 480px;
-  background: repeating-linear-gradient(to right,#E7E7E7,#fff 1px,#fff 20px);
+  height: 100%;
+  width: 100%;
+  background: repeating-linear-gradient(
+    to right,
+    #F2EFEF,
+    #F2EFEF 4.166%,
+    #FFFFFF 4.166%,
+    #FFFFFF 8.322%
+  );
   padding-top: 10px;
 }
 
 .container{
   border: 1px solid #DDDCDC;
   background-color: #F5F5F5;
-  width: 80%;
+  width: 960px;
   height: 500px;
   display: border-box;
   padding: 20px;
@@ -39,8 +45,8 @@ body {
 }
 .graph-box{
   border: 2px solid #A9A9A9;
-  width: 480px;
-  /* height: 450px; */
+  width: 100%;
+  height: auto;
   display: border-box;
   clear:both;
 }

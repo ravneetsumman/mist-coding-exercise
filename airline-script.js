@@ -85,7 +85,7 @@ function is_flight_in_given_hour(flight, hour_index) {
   return hour_start <= flight_time && flight_time <= hour_end;
 }
 
-function calculate_coordinates(flights_data, width=480, height=150){
+function calculate_coordinates(flights_data, width=960, height=400){
   var max = Math.max(...flights_data);
   var min = Math.min(...flights_data);
 
