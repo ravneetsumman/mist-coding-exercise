@@ -1,9 +1,3 @@
-// class Flight {
-//   var id;
-//   var name;
-//   var time;
-// }
-
 // hour ranges for all 24 hours
 var hour_filters = [{'start':'00:00:00','end':'00:59:59'},
                     {'start':'01:00:00','end':'01:59:59'},
@@ -41,7 +35,8 @@ function update_flights_info(searched_airline_id = '') {
   const total_flights = num_flights_by_hour.reduce((partial_sum, current_value) => partial_sum + current_value, 0);
 
   displayed_airline_name = searched_airline_id == '' ? 'All Airlines' : displayed_airline_name;
-  document.getElementById('flight_count').textContent = `${total_flights} Flights ${displayed_airline_name}`;
+  document.getElementById('flight_count').textContent = `${total_flights} Flights `;
+  document.getElementById('sel_airline_name').textContent =  displayed_airline_name;
 
   //call function to calculate coordinates
   var coordinates = calculate_coordinates(num_flights_by_hour);
@@ -124,8 +119,8 @@ function draw_poly_line(coordinates){
 
 // keypress event on input text filter
 document.getElementById('airline_name').onkeypress = function(event){
- if(event.keyCode == 13 || event.which == 13){
-   get_filtered_airlines(event);
+  if(event.keyCode == 13 || event.which == 13){
+    get_filtered_airlines(event);
   }
 }
 

@@ -57,3 +57,6 @@ body {
   text-align: center;
   line-height: 27px;
 }
+#flight_count{
+  font-weight: bold;
+}
